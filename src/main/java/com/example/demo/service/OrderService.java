@@ -1,5 +1,7 @@
 package com.example.demo.service;
 
+import com.example.demo.dao.OrderDao;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -12,7 +14,10 @@ import org.springframework.stereotype.Service;
 @Service
 public class OrderService {
 
+    @Autowired
+    OrderDao orderDao;
+
     public String test(String name){
-        return "orderService "+name;
+        return "orderService "+ orderDao.test(name);
     }
 }
